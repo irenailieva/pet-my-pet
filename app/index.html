@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style/styles.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="node_modules/sammy/lib/sammy.js"></script>
+    <script src="node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+</head>
+<body>
+<div id="container">
+
+    <!-- NAV -->
+    <header id="site-header">
+        <nav class="navbar">
+
+            <section id="navbar-dashboard" class="navbar-dashboard">
+                <div class="first-bar">
+                    <a href="#/dashboard/all">Dashboard</a>
+                    <a class="button" href="#/my-pets">My Pets</a>
+                    <a class="button" href="#/add-pet">Add Pet</a>
+                </div>
+                <div class="second-bar">
+                    <ul>
+                        <li id="greeting">Welcome, {{username}}!</li>
+                        <li><a href="#/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section id="navbar-anonymous" class="navbar-anonymous">
+                <ul>
+                    <li><a href="#/register"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li><a href="#/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                </ul>
+            </section>
+        </nav>
+    </header>
+
+    <main class="container" id="site-content"></main>
+
+    <!--Footer-->
+    <footer id="site-footer">
+        <p>@PetMyPet</p>
+    </footer>
+</div>
+
+<!-- notifications -->
+    <div id="notifications">
+        <div id="loadingBox" class="notification">
+            <span>Loading …</span>
+        </div>
+        <div id="infoBox" class="notification">
+            <span>Info</span>
+        </div>
+        <div id="errorBox" class="notification">
+            <span>Error</span>
+        </div>
+    </div>
+
+    <!-- Helpers -->
+    <script src="helpers/storage.js"></script>
+    <script src="helpers/requester.js"></script>
+    <script src="helpers/notification.js"></script>
+    <!-- Models -->
+    <script src="models/user-model.js"></script>
+    <script src="models/pet-model.js"></script>
+    <!-- Controllers -->
+    <script src="controllers/home.js"></script>
+    <script src="controllers/user.js"></script>
+    <script src="controllers/pet.js"></script>
+    <!-- Router -->
+    <script src="app.js"></script>
+</body>
+</html>
